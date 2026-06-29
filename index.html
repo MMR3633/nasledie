@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>НАСЛЕДИЕ — ателье индивидуального пошива мужской одежды в Краснодаре</title>
+<meta name="description" content="Индивидуальный пошив мужской одежды в Краснодаре: костюмы, смокинги, сорочки и пальто по личным меркам. От референса до AI-визуализации и готового изделия." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { display: ['"Playfair Display"','serif'], body: ['Montserrat','sans-serif'] },
+  colors: {
+    cream: '#f4efe7', sand: '#ece3d4', panel: '#efe8dc',
+    ink: '#221d17', coffee: '#2c251d',
+    gold: '#b08d57', golddark: '#9a7841',
+    muted: '#6b6256', line: '#d9cdb9'
+  }
+}}}
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#f4efe7;color:#221d17;font-family:'Montserrat',sans-serif;overflow-x:hidden}
+  ::selection{background:#b08d57;color:#fff}
+  .serif{font-family:'Playfair Display',serif}
+  .label{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase}
+  .btn-gold{background:#b08d57;color:#fff;letter-spacing:.12em;transition:.35s}
+  .btn-gold:hover{background:#9a7841;transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(154,120,65,.6)}
+  .btn-out{border:1px solid #b08d57;color:#9a7841;letter-spacing:.12em;transition:.35s}
+  .btn-out:hover{background:#b08d57;color:#fff}
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:all .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  /* hero overlay */
+  .hero-img{background:#221d17 center/cover no-repeat}
+  .hero-ov{background:linear-gradient(180deg,rgba(20,16,12,.55) 0%,rgba(20,16,12,.35) 40%,rgba(20,16,12,.85) 100%)}
+  /* timeline */
+  .step-num{width:2.4rem;height:2.4rem;border:1px solid #b08d57;color:#9a7841;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;flex:none}
+  /* fabric weave swatch */
+  .weave{background-size:6px 6px;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 3px),repeating-linear-gradient(-45deg,rgba(0,0,0,.10) 0 1px,transparent 1px 3px)}
+  .card-img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .card-img{transform:scale(1.05)}
+  .gitem{transition:opacity .4s, transform .4s}
+  .gfilter.active{background:#b08d57;color:#fff;border-color:#b08d57}
+  .navlink{position:relative}
+  .navlink::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:#b08d57;transition:.3s}
+  .navlink:hover::after{width:100%}
+  .map-bg{background:
+    linear-gradient(0deg,rgba(176,141,87,.05),rgba(176,141,87,.05)),
+    repeating-linear-gradient(0deg,#e7ddca 0 38px,#efe8dc 38px 40px),
+    repeating-linear-gradient(90deg,#e7ddca 0 58px,#efe8dc 58px 60px)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
+    <a href="#top" class="leading-none">
+      <div class="serif text-2xl tracking-[.3em] font-semibold">НАСЛЕДИЕ</div>
+      <div class="label text-muted mt-1 text-[.6rem]">Ателье мужской одежды</div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[.8rem] tracking-wide text-coffee">
+      <a href="#directions" class="navlink">Направления</a>
+      <a href="#process" class="navlink">Процесс</a>
+      <a href="#fabrics" class="navlink">Ткани</a>
+      <a href="#gallery" class="navlink">Галерея</a>
+      <a href="#about" class="navlink">О нас</a>
+      <a href="#contacts" class="navlink">Контакты</a>
+    </nav>
+    <a href="#contacts" class="hidden lg:inline-block btn-gold text-[.75rem] font-semibold px-6 py-3 rounded-sm uppercase">Записаться</a>
+    <button id="burger" class="lg:hidden p-2" aria-label="Меню">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2c251d" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobmenu" class="hidden lg:hidden bg-cream border-t border-line">
+    <div class="px-5 py-4 flex flex-col gap-4 text-sm tracking-wide">
+      <a href="#directions" class="mlink">Направления</a>
+      <a href="#process" class="mlink">Процесс</a>
+      <a href="#fabrics" class="mlink">Ткани</a>
+      <a href="#gallery" class="mlink">Галерея</a>
+      <a href="#about" class="mlink">О нас</a>
+      <a href="#contacts" class="mlink">Контакты</a>
+      <a href="#contacts" class="mlink btn-gold text-center py-3 rounded-sm uppercase text-xs font-semibold">Записаться на консультацию</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-[100svh] flex items-end">
+  <div class="hero-img absolute inset-0" style="background-image:url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1400&q=72')"></div>
+  <div class="hero-ov absolute inset-0"></div>
+  <div class="relative w-full max-w-6xl mx-auto px-5 pb-20 pt-32 text-cream">
+    <div class="max-w-2xl">
+      <p class="label text-gold mb-6 reveal">Краснодар · с 2014 года</p>
+      <h1 class="serif text-4xl sm:text-6xl font-semibold leading-[1.08] mb-7 reveal">Индивидуальный пошив мужской одежды</h1>
+      <p class="text-cream/80 text-base sm:text-lg leading-relaxed mb-4 reveal max-w-xl">Костюмы, смокинги, сорочки и пальто по индивидуальным меркам в Краснодаре.</p>
+      <p class="text-cream/70 text-sm sm:text-base leading-relaxed mb-9 reveal max-w-xl">От идеи и референса до технического рисунка, AI-визуализации и готового изделия.</p>
+      <a href="#contacts" class="inline-block btn-gold text-sm font-semibold px-9 py-4 rounded-sm uppercase reveal">Записаться на консультацию</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section id="directions" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="text-center mb-14 reveal">
+    <p class="label text-gold mb-4">Направления</p>
+    <h2 class="serif text-3xl sm:text-5xl font-semibold">Образ под любую задачу</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-7">
+    <article class="card reveal bg-panel border border-line overflow-hidden rounded-sm">
+      <div class="overflow-hidden h-72"><div class="card-img w-full h-full bg-ink" style="background:#221d17 url('https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=700&q=72') center/cover"></div></div>
+      <div class="p-7">
+        <h3 class="serif text-2xl font-semibold mb-3">Свадьбы и смокинги</h3>
+        <p class="text-muted text-sm leading-relaxed mb-5">Образ для одного из самых важных дней в жизни.</p>
+        <a href="#contacts" class="label text-golddark hover:text-gold transition">Смотреть →</a>
+      </div>
+    </article>
+    <article class="card reveal bg-panel border border-line overflow-hidden rounded-sm">
+      <div class="overflow-hidden h-72"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?auto=format&fit=crop&w=700&q=72') center/cover"></div></div>
+      <div class="p-7">
+        <h3 class="serif text-2xl font-semibold mb-3">Деловой гардероб</h3>
+        <p class="text-muted text-sm leading-relaxed mb-5">Ваш образ начинает говорить раньше вас.</p>
+        <a href="#contacts" class="label text-golddark hover:text-gold transition">Смотреть →</a>
+      </div>
+    </article>
+    <article class="card reveal bg-panel border border-line overflow-hidden rounded-sm">
+      <div class="overflow-hidden h-72"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=700&q=72') center/cover"></div></div>
+      <div class="p-7">
+        <h3 class="serif text-2xl font-semibold mb-3">Повседневный стиль</h3>
+        <p class="text-muted text-sm leading-relaxed mb-5">Стиль это привычка, а не событие.</p>
+        <a href="#contacts" class="label text-golddark hover:text-gold transition">Смотреть →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="bg-coffee text-cream py-24">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-16 reveal">
+      <p class="label text-gold mb-4">Как проходит работа</p>
+      <h2 class="serif text-3xl sm:text-5xl font-semibold">Восемь шагов до идеального изделия</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-x-12 gap-y-10 max-w-4xl mx-auto">
+      <div class="reveal flex gap-5"><div class="step-num">1</div><div><h3 class="serif text-xl mb-2">Консультация</h3><p class="text-cream/65 text-sm leading-relaxed">Определяем задачу клиента: свадьба, бизнес, повседневный гардероб.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">2</div><div><h3 class="serif text-xl mb-2">Подбор образа</h3><p class="text-cream/65 text-sm leading-relaxed">Работаем по любым референсам: фильмы, актёры, журналы, Pinterest, фото из интернета.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">3</div><div><h3 class="serif text-xl mb-2">Технический рисунок</h3><p class="text-cream/65 text-sm leading-relaxed">Фиксируем все пожелания: посадка, силуэт, детали, длины.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">4</div><div><h3 class="serif text-xl mb-2 flex items-center gap-2">AI-визуализация <span class="label text-[.55rem] bg-gold text-white px-2 py-1 rounded-sm">наша фишка</span></h3><p class="text-cream/65 text-sm leading-relaxed">Создаём визуализацию будущего изделия на модели с помощью AI до начала пошива.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">5</div><div><h3 class="serif text-xl mb-2">Подбор материалов</h3><p class="text-cream/65 text-sm leading-relaxed">Подбираем ткани, подкладку, пуговицы и фурнитуру.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">6</div><div><h3 class="serif text-xl mb-2">Первая примерка</h3><p class="text-cream/65 text-sm leading-relaxed">Проверяем посадку изделия и вносим необходимые корректировки.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">7</div><div><h3 class="serif text-xl mb-2">Вторая примерка</h3><p class="text-cream/65 text-sm leading-relaxed">Финальная доработка и доведение посадки до идеального результата.</p></div></div>
+      <div class="reveal flex gap-5"><div class="step-num">8</div><div><h3 class="serif text-xl mb-2">Выдача изделия</h3><p class="text-cream/65 text-sm leading-relaxed">Готовое изделие передаётся клиенту. Вы получаете одежду, созданную специально для вас.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FABRICS -->
+<section id="fabrics" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="text-center mb-12 reveal">
+    <p class="label text-gold mb-4">Ткани</p>
+    <h2 class="serif text-3xl sm:text-5xl font-semibold mb-5">Ткани ведущих мировых производителей</h2>
+    <p class="text-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Более 5000 вариантов тканей и материалов от лучших фабрик Европы и Великобритании, от практичных до премиальных коллекций для особых случаев.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-10 items-center mb-14">
+    <div class="reveal bg-panel border border-line rounded-sm p-8 flex items-center gap-8">
+      <div>
+        <div class="serif text-5xl font-semibold text-golddark">5000+</div>
+        <div class="label text-muted mt-2 text-[.62rem]">вариантов тканей<br>и материалов</div>
+      </div>
+      <ul class="text-sm text-coffee space-y-2 border-l border-line pl-8">
+        <li>Шерсть</li><li>Кашемир</li><li>Шёлк</li><li>Лён</li><li>Хлопок</li><li>Смесовые ткани</li>
+      </ul>
+    </div>
+    <!-- fabric swatches -->
+    <div class="reveal grid grid-cols-3 gap-3">
+      <div class="weave h-24 rounded-sm" style="background-color:#2f3338"></div>
+      <div class="weave h-24 rounded-sm" style="background-color:#26303f"></div>
+      <div class="weave h-24 rounded-sm" style="background-color:#4a3b2c"></div>
+      <div class="weave h-24 rounded-sm" style="background-color:#6b6256"></div>
+      <div class="weave h-24 rounded-sm" style="background-color:#8a7152"></div>
+      <div class="weave h-24 rounded-sm" style="background-color:#3a4036"></div>
+    </div>
+  </div>
+
+  <!-- brand logos -->
+  <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-6 text-center text-muted serif tracking-widest text-sm border-y border-line py-10">
+    <span>DORMEUIL</span><span>SCABAL</span><span>HOLLAND&nbsp;&amp;&nbsp;SHERRY</span><span>DRAGO</span>
+    <span>VITALE&nbsp;BARBERIS</span><span>REDA&nbsp;1865</span><span>GUABELLO</span><span>CERRUTI&nbsp;1881</span>
+    <span>ARISTON&nbsp;NAPOLI</span><span>CARNET&nbsp;COMO</span><span>LORO&nbsp;PIANA</span><span>ZEGNA</span>
+  </div>
+
+  <div class="text-center mt-12 reveal">
+    <a href="#contacts" class="btn-out inline-block text-sm font-semibold px-9 py-4 rounded-sm uppercase">Подробнее о тканях</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bg-sand py-24">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-10 reveal">
+      <p class="label text-gold mb-4">Галерея работ</p>
+      <h2 class="serif text-3xl sm:text-5xl font-semibold">Сшито в ателье «НАСЛЕДИЕ»</h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+      <button class="gfilter active label border border-line px-5 py-2.5 rounded-sm text-[.65rem] transition" data-cat="all">Все</button>
+      <button class="gfilter label border border-line px-5 py-2.5 rounded-sm text-[.65rem] transition" data-cat="wed">Свадьбы</button>
+      <button class="gfilter label border border-line px-5 py-2.5 rounded-sm text-[.65rem] transition" data-cat="biz">Бизнес</button>
+      <button class="gfilter label border border-line px-5 py-2.5 rounded-sm text-[.65rem] transition" data-cat="cas">Casual</button>
+      <button class="gfilter label border border-line px-5 py-2.5 rounded-sm text-[.65rem] transition" data-cat="coat">Пальто</button>
+    </div>
+    <div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="wed"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="biz"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="biz"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="cas"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="cas"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="coat"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="coat"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="wed"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+      <div class="gitem card overflow-hidden rounded-sm h-64 sm:h-80" data-cat="biz"><div class="card-img w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=72') center/cover"></div></div>
+    </div>
+    <div class="text-center mt-12 reveal">
+      <a href="#contacts" class="btn-out inline-block text-sm font-semibold px-9 py-4 rounded-sm uppercase">Смотреть всю галерею</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal h-[460px] rounded-sm overflow-hidden order-2 md:order-1">
+      <div class="w-full h-full" style="background:#221d17 url('https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=900&q=72') center/cover"></div>
+    </div>
+    <div class="reveal order-1 md:order-2">
+      <p class="label text-gold mb-4">О нас</p>
+      <h2 class="serif text-3xl sm:text-5xl font-semibold mb-6 leading-tight">Одежда, которая отражает вас</h2>
+      <p class="text-muted leading-relaxed mb-4">НАСЛЕДИЕ это ателье индивидуального пошива мужской одежды в Краснодаре. Создаём одежду по индивидуальным меркам с вниманием к каждой детали.</p>
+      <p class="text-muted leading-relaxed mb-8">Наша задача создать изделие, которое будет отражать характер, образ жизни и задачи клиента.</p>
+      <a href="#contacts" class="btn-gold inline-block text-sm font-semibold px-9 py-4 rounded-sm uppercase">Узнать больше</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="bg-coffee text-cream py-24">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-14 reveal">
+      <p class="label text-gold mb-4">Контакты</p>
+      <h2 class="serif text-3xl sm:text-5xl font-semibold">Запишитесь на консультацию</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- info + map -->
+      <div class="reveal space-y-6">
+        <div class="flex items-center gap-4"><span class="text-gold">●</span><span>г. Краснодар, ул. Красная, 123</span></div>
+        <div class="flex items-center gap-4"><span class="text-gold">●</span><a href="tel:+79000000000" class="hover:text-gold transition">+7 (900) 000-00-00</a></div>
+        <div class="flex items-center gap-4"><span class="text-gold">●</span><a href="#" class="hover:text-gold transition">WhatsApp</a></div>
+        <div class="flex items-center gap-4"><span class="text-gold">●</span><a href="#" class="hover:text-gold transition">Telegram</a></div>
+        <div class="flex items-center gap-4"><span class="text-gold">●</span><a href="#" class="hover:text-gold transition">@nasledie_atelier</a></div>
+        <div class="map-bg relative h-56 rounded-sm border border-cream/10 mt-4 overflow-hidden">
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="#b08d57"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          </div>
+          <div class="absolute bottom-3 left-3 bg-coffee/85 px-3 py-1.5 text-[.7rem] rounded-sm">Ателье «НАСЛЕДИЕ»</div>
+        </div>
+      </div>
+      <!-- form -->
+      <form id="leadform" class="reveal bg-cream/5 border border-cream/10 rounded-sm p-7 space-y-5">
+        <div>
+          <label class="label text-cream/60 block mb-2">Имя</label>
+          <input name="name" required class="w-full bg-transparent border border-cream/20 rounded-sm px-4 py-3 text-cream placeholder-cream/30 focus:border-gold outline-none" placeholder="Как к вам обращаться" />
+        </div>
+        <div>
+          <label class="label text-cream/60 block mb-2">Телефон</label>
+          <input name="phone" required inputmode="tel" class="w-full bg-transparent border border-cream/20 rounded-sm px-4 py-3 text-cream placeholder-cream/30 focus:border-gold outline-none" placeholder="+7 ___ ___ __ __" />
+        </div>
+        <div>
+          <label class="label text-cream/60 block mb-2">Направление</label>
+          <select name="dir" class="w-full bg-coffee border border-cream/20 rounded-sm px-4 py-3 text-cream focus:border-gold outline-none">
+            <option>Свадьбы и смокинги</option>
+            <option>Деловой гардероб</option>
+            <option>Повседневный стиль</option>
+            <option>Пальто</option>
+            <option>Пока не определился</option>
+          </select>
+        </div>
+        <button class="btn-gold w-full text-sm font-semibold py-4 rounded-sm uppercase">Записаться на консультацию</button>
+        <p id="formok" class="hidden text-center text-gold text-sm">Спасибо. Мы свяжемся с вами в ближайшее время.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-cream/50 py-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+    <div class="serif tracking-[.3em] text-cream">НАСЛЕДИЕ</div>
+    <div>© 2026 Ателье «НАСЛЕДИЕ». Все права защищены.</div>
+    <a href="#" class="hover:text-gold transition">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const mob = document.getElementById('mobmenu');
+  burger.addEventListener('click', () => mob.classList.toggle('hidden'));
+  document.querySelectorAll('.mlink').forEach(a => a.addEventListener('click', () => mob.classList.add('hidden')));
+
+  // gallery filter
+  const filters = document.querySelectorAll('.gfilter');
+  const items = document.querySelectorAll('.gitem');
+  filters.forEach(btn => btn.addEventListener('click', () => {
+    filters.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    items.forEach(it => {
+      const show = cat === 'all' || it.dataset.cat === cat;
+      it.style.display = show ? '' : 'none';
+    });
+  }));
+
+  // form (demo, без бэкенда)
+  document.getElementById('leadform').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.querySelectorAll('input,select,button').forEach(el => el.disabled = true);
+    document.getElementById('formok').classList.remove('hidden');
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 1800);
+</script>
+</body>
+</html>
