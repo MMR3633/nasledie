@@ -30,15 +30,15 @@ tailwind.config = { theme: { extend: {
   .btn-gold:hover{background:#9a7841;transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(154,120,65,.6)}
   .btn-out{border:1px solid #b08d57;color:#9a7841;letter-spacing:.12em;transition:.35s}
   .btn-out:hover{background:#b08d57;color:#fff}
-  /* reveal */
+
   .reveal{opacity:0;transform:translateY(26px);transition:all .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  /* hero overlay */
+
   .hero-img{background:#221d17 center/cover no-repeat}
   .hero-ov{background:linear-gradient(180deg,rgba(20,16,12,.55) 0%,rgba(20,16,12,.35) 40%,rgba(20,16,12,.85) 100%)}
-  /* timeline */
+
   .step-num{width:2.4rem;height:2.4rem;border:1px solid #b08d57;color:#9a7841;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;flex:none}
-  /* fabric weave swatch */
+
   .weave{background-size:6px 6px;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 3px),repeating-linear-gradient(-45deg,rgba(0,0,0,.10) 0 1px,transparent 1px 3px)}
   .card-img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
   .card:hover .card-img{transform:scale(1.05)}
@@ -55,7 +55,6 @@ tailwind.config = { theme: { extend: {
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur border-b border-line">
   <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
     <a href="#top" class="leading-none">
@@ -75,7 +74,7 @@ tailwind.config = { theme: { extend: {
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2c251d" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>
   </div>
-  <!-- mobile menu -->
+
   <div id="mobmenu" class="hidden lg:hidden bg-cream border-t border-line">
     <div class="px-5 py-4 flex flex-col gap-4 text-sm tracking-wide">
       <a href="#directions" class="mlink">Направления</a>
@@ -89,7 +88,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </header>
 
-<!-- HERO -->
 <section id="top" class="relative min-h-[100svh] flex items-end">
   <div class="hero-img absolute inset-0" style="background-image:url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1400&q=72')"></div>
   <div class="hero-ov absolute inset-0"></div>
@@ -104,7 +102,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- DIRECTIONS -->
 <section id="directions" class="max-w-6xl mx-auto px-5 py-24">
   <div class="text-center mb-14 reveal">
     <p class="label text-gold mb-4">Направления</p>
@@ -138,7 +135,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- PROCESS -->
 <section id="process" class="bg-coffee text-cream py-24">
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-16 reveal">
@@ -158,7 +154,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- FABRICS -->
 <section id="fabrics" class="max-w-6xl mx-auto px-5 py-24">
   <div class="text-center mb-12 reveal">
     <p class="label text-gold mb-4">Ткани</p>
@@ -176,7 +171,7 @@ tailwind.config = { theme: { extend: {
         <li>Шерсть</li><li>Кашемир</li><li>Шёлк</li><li>Лён</li><li>Хлопок</li><li>Смесовые ткани</li>
       </ul>
     </div>
-    <!-- fabric swatches -->
+
     <div class="reveal grid grid-cols-3 gap-3">
       <div class="weave h-24 rounded-sm" style="background-color:#2f3338"></div>
       <div class="weave h-24 rounded-sm" style="background-color:#26303f"></div>
@@ -187,7 +182,6 @@ tailwind.config = { theme: { extend: {
     </div>
   </div>
 
-  <!-- brand logos -->
   <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-6 text-center text-muted serif tracking-widest text-sm border-y border-line py-10">
     <span>DORMEUIL</span><span>SCABAL</span><span>HOLLAND&nbsp;&amp;&nbsp;SHERRY</span><span>DRAGO</span>
     <span>VITALE&nbsp;BARBERIS</span><span>REDA&nbsp;1865</span><span>GUABELLO</span><span>CERRUTI&nbsp;1881</span>
@@ -199,7 +193,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery" class="bg-sand py-24">
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-10 reveal">
@@ -230,7 +223,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="max-w-6xl mx-auto px-5 py-24">
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div class="reveal h-[460px] rounded-sm overflow-hidden order-2 md:order-1">
@@ -246,7 +238,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- CONTACTS -->
 <section id="contacts" class="bg-coffee text-cream py-24">
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-14 reveal">
@@ -254,7 +245,7 @@ tailwind.config = { theme: { extend: {
       <h2 class="serif text-3xl sm:text-5xl font-semibold">Запишитесь на консультацию</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-12">
-      <!-- info + map -->
+
       <div class="reveal space-y-6">
         <div class="flex items-center gap-4"><span class="text-gold">●</span><span>г. Краснодар, ул. Красная, 123</span></div>
         <div class="flex items-center gap-4"><span class="text-gold">●</span><a href="tel:+79000000000" class="hover:text-gold transition">+7 (900) 000-00-00</a></div>
@@ -268,7 +259,7 @@ tailwind.config = { theme: { extend: {
           <div class="absolute bottom-3 left-3 bg-coffee/85 px-3 py-1.5 text-[.7rem] rounded-sm">Ателье «НАСЛЕДИЕ»</div>
         </div>
       </div>
-      <!-- form -->
+
       <form id="leadform" class="reveal bg-cream/5 border border-cream/10 rounded-sm p-7 space-y-5">
         <div>
           <label class="label text-cream/60 block mb-2">Имя</label>
@@ -295,7 +286,6 @@ tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="bg-ink text-cream/50 py-10">
   <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
     <div class="serif tracking-[.3em] text-cream">НАСЛЕДИЕ</div>
@@ -305,13 +295,11 @@ tailwind.config = { theme: { extend: {
 </footer>
 
 <script>
-  // mobile menu
   const burger = document.getElementById('burger');
   const mob = document.getElementById('mobmenu');
   burger.addEventListener('click', () => mob.classList.toggle('hidden'));
   document.querySelectorAll('.mlink').forEach(a => a.addEventListener('click', () => mob.classList.add('hidden')));
 
-  // gallery filter
   const filters = document.querySelectorAll('.gfilter');
   const items = document.querySelectorAll('.gitem');
   filters.forEach(btn => btn.addEventListener('click', () => {
@@ -324,14 +312,12 @@ tailwind.config = { theme: { extend: {
     });
   }));
 
-  // form (demo, без бэкенда)
   document.getElementById('leadform').addEventListener('submit', (e) => {
     e.preventDefault();
     e.target.querySelectorAll('input,select,button').forEach(el => el.disabled = true);
     document.getElementById('formok').classList.remove('hidden');
   });
 
-  // reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
